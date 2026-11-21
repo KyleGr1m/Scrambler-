@@ -18,7 +18,9 @@ IGNORE_WORDS = {
     "good", "luck", "reward", "ends", "in", "minutes"
 }
 
-client = discord.Client()
+intents = discord.Intents.default()
+intents.message_content = True
+client = discord.Client(intents=intents)
 
 # Tracks active scrambles: { channel_id: "scrambled_letters" }
 ACTIVE_SCRAMBLES = {}
