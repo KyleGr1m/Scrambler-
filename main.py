@@ -6,10 +6,9 @@ import urllib.request
 import json
 
 # ── CONFIG ──
-TOKEN = os.environ.get("DISCORD_TOKEN")
-# Comma-separated list of channel IDs (e.g., "1111111,2222222,3333333")
-CHANNEL_IDS = [int(x.strip()) for x in os.environ.get("CHANNEL_IDS", "").split(",") if x.strip()]
-BOT_ID = int(os.environ.get("BOT_ID", 0))
+TOKEN = "ODk0NDQ4MTg4MTkzMzk4ODI2.GM1Iq9.8qo5nxDnmBtaGuG5AHkDZQhd_8mEVeeID7G9bA"
+CHANNEL_IDS = [1556149863190630411, 1556292827951145121, 1560229992611192852]
+BOT_ID = 1558128230588878910
 
 IGNORE_WORDS = {
     "scramble", "unscramble", "answer", "ended", "result", "no", "one", 
