@@ -102,9 +102,14 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
+    print(f"DEBUG: Saw message from {message.author.name} in {message.channel.name}")
     if message.author.id == client.user.id: return
-    if message.channel.id not in CHANNEL_IDS or message.author.id != BOT_ID: return
-
+    if message.channel.id not in CHANNEL_IDS: 
+        print(f"DEBUG: Ignored. Channel ID {message.channel.id} is not in the list.")
+        return
+    if message.author.id != BOT_ID:
+        print(f"DEBUG: Ignored. Author ID {message.author.id} does not match {BOT_ID}.")
+        return
     text = message.content
     if message.embeds:
         for e in message.embeds:
